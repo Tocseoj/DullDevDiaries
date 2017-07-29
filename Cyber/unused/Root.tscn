@@ -1,0 +1,189 @@
+[gd_scene load_steps=15 format=1]
+
+[ext_resource path="res://unused/Root.gd" type="Script" id=1]
+[ext_resource path="res://tile/tile_1_4.scn" type="PackedScene" id=2]
+[ext_resource path="res://unused/Player.tscn" type="PackedScene" id=3]
+
+
+
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 8192, 20250, 0, 0, 0, 0, 6950, 20250, 0, 0, 0, 0, 6950, 19174, 0, 0, 0, 0, 7526, 19174, 0, 0, 0, 0, 7526, 18790, 0, 0, 0, 0, 7654, 18790, 0, 0, 0, 0, 7654, 17574, 0, 0, 0, 0, 8192, 17574 )
+}
+
+[sub_resource type="SegmentShape2D" id=2]
+
+custom_solver_bias = 0.0
+a = Vector2( 0.333496, 0 )
+b = Vector2( -1103.67, 0 )
+
+[sub_resource type="SegmentShape2D" id=3]
+
+custom_solver_bias = 0.0
+a = Vector2( -1104, -1071 )
+b = Vector2( -1104, 5 )
+
+[sub_resource type="SegmentShape2D" id=4]
+
+custom_solver_bias = 0.0
+a = Vector2( -604.444, -1101 )
+b = Vector2( -1116.44, -1101 )
+
+[sub_resource type="Curve2D" id=5]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 8192, 20390, 0, 0, 0, 0, 7718, 20390, 0, 0, 0, 0, 7718, 20480 )
+}
+
+[sub_resource type="Curve2D" id=6]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 7642, 20480, 0, 0, 0, 0, 7642, 20390, 0, 0, 0, 0, 7206, 20390, 0, 0, 0, 0, 7206, 20480 )
+}
+
+[sub_resource type="Curve2D" id=7]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 7130, 20480, 0, 0, 0, 0, 7130, 20390, 0, 0, 0, 0, 6810, 20390, 0, 0, 0, 0, 6810, 19942, 0, 0, 0, 0, 6310, 19942, 0, 0, 0, 0, 6310, 20480 )
+}
+
+[sub_resource type="Curve2D" id=8]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 6234, 20480, 0, 0, 0, 0, 6234, 19942, 0, 0, 0, 0, 5798, 19942, 0, 0, 0, 0, 5798, 20480 )
+}
+
+[sub_resource type="Curve2D" id=9]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 5722, 20480, 0, 0, 0, 0, 5722, 19942, 0, 0, 0, 0, 4966, 19942, 0, 0, 0, 0, 4966, 20480 )
+}
+
+[sub_resource type="Curve2D" id=10]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 4826, 20480, 0, 0, 0, 0, 4826, 19802, 0, 0, 0, 0, 6810, 19802, 0, 0, 0, 0, 6810, 17434, 0, 0, 0, 0, 8192, 17434 )
+}
+
+[sub_resource type="Curve2D" id=11]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 6950, 19098, 0, 0, 0, 0, 6950, 17574, 0, 0, 0, 0, 7578, 17574, 0, 0, 0, 0, 7578, 18714, 0, 0, 0, 0, 7450, 18714, 0, 0, 0, 0, 7450, 19098, 0, 0, 0, 0, 6950, 19098 )
+}
+
+[node name="Root" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="Tiles" type="Node2D" parent="Map"]
+
+editor/display_folded = true
+
+[node name="tile_1_4" parent="Map/Tiles" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 4096, 16384 )
+
+[node name="Paths" type="Node2D" parent="Map"]
+
+[node name="Path2D1" type="Path2D" parent="Map/Paths"]
+
+curve = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Map/Paths/Path2D1"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1.125, 0, 0, 1, 8191.62, 20250 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 3 )
+shapes/1/transform = Matrix32( 1.125, 0, 0, 1, 8192, 20245 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 4 )
+shapes/2/transform = Matrix32( 1.125, 0, 0, 1, 8206, 20275 )
+shapes/2/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Paths/Path2D1/Area2D"]
+
+transform/pos = Vector2( 8191.62, 20250 )
+transform/scale = Vector2( 1.125, 1 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="Map/Paths/Path2D1/Area2D"]
+
+transform/pos = Vector2( 8192, 20245 )
+transform/scale = Vector2( 1.125, 1 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map/Paths/Path2D1/Area2D"]
+
+transform/pos = Vector2( 8206, 20275 )
+transform/scale = Vector2( 1.125, 1 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 2
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Map/Paths/Path2D1"]
+
+transform/pos = Vector2( 8192, 20250 )
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = false
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="Path2D2" type="Path2D" parent="Map/Paths"]
+
+curve = SubResource( 5 )
+
+[node name="Path2D3" type="Path2D" parent="Map/Paths"]
+
+curve = SubResource( 6 )
+
+[node name="Path2D4" type="Path2D" parent="Map/Paths"]
+
+curve = SubResource( 7 )
+
+[node name="Path2D5" type="Path2D" parent="Map/Paths"]
+
+curve = SubResource( 8 )
+
+[node name="Path2D6" type="Path2D" parent="Map/Paths"]
+
+curve = SubResource( 9 )
+
+[node name="Path2D7" type="Path2D" parent="Map/Paths"]
+
+curve = SubResource( 10 )
+
+[node name="Path2D8" type="Path2D" parent="Map/Paths"]
+
+curve = SubResource( 11 )
+
+[node name="Player" parent="Map/Paths" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 8192, 20480 )
+
+

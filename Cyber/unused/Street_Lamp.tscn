@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Assets/Art/Tiles/Streets/lamp_up.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Street_Lamp.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Art/Tiles/Streets/lamp_light_2.png" type="Texture" id=3]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Sprite\n\nexport var flicker = false\nvar target_total = 0.0\nvar total_delta = 0.0\n\nfunc _ready():\n\trandomize()\n\tset_process(true)\n\t\nfunc _process(delta):\n\ttotal_delta += delta\n\tif flicker:\n\t\tif total_delta >= target_total:\n\t\t\ttarget_total = total_delta + rand_range(0.05, 1.0)\n\t\t\tset_opacity(randf())"
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 3, 3 )
+
+[node name="Street_Lamp" type="Sprite"]
+
+texture = ExtResource( 1 )
+offset = Vector2( 1, -35 )
+script/script = ExtResource( 2 )
+facing = 2
+light = 2
+
+[node name="Light" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1, -58 )
+texture = ExtResource( 3 )
+script/script = SubResource( 1 )
+flicker = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -3 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+transform/pos = Vector2( 0, -3 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+
