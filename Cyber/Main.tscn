@@ -2,7 +2,7 @@
 
 [ext_resource path="res://texture_rock_metal.tex" type="Texture" id=1]
 [ext_resource path="res://script/Game_Control.gd" type="Script" id=2]
-[ext_resource path="res://Game.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Root.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Control"]
 
@@ -68,6 +68,8 @@ audio_listener/enable_3d = false
 physics/object_picking = false
 gui/disable_input = false
 
-[node name="Game" parent="Window/Game_View" instance=ExtResource( 3 )]
+[node name="Root" parent="Window/Game_View" instance=ExtResource( 3 )]
+
+[connection signal="scale_change" from="Window" to="Window/Game_View/Root" method="_on_Window_scale_change"]
 
 

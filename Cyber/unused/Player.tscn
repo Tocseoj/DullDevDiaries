@@ -1,24 +1,24 @@
-[gd_scene load_steps=36 format=1]
+[gd_scene load_steps=37 format=1]
 
-[ext_resource path="res://unused/player_old.gd" type="Script" id=1]
-[ext_resource path="res://art/character/man/walk/body/man_walk_left_7.png" type="Texture" id=2]
-[ext_resource path="res://art/character/man/walk/body/man_walk_down_7.png" type="Texture" id=3]
-[ext_resource path="res://art/character/man/walk/body/man_walk_up_7.png" type="Texture" id=4]
-[ext_resource path="res://art/character/man/walk/body/man_walk_left_0.png" type="Texture" id=5]
-[ext_resource path="res://art/character/man/walk/body/man_walk_left_1.png" type="Texture" id=6]
-[ext_resource path="res://art/character/man/walk/body/man_walk_left_2.png" type="Texture" id=7]
-[ext_resource path="res://art/character/man/walk/body/man_walk_left_3.png" type="Texture" id=8]
-[ext_resource path="res://art/character/man/walk/body/man_walk_left_4.png" type="Texture" id=9]
-[ext_resource path="res://art/character/man/walk/body/man_walk_left_5.png" type="Texture" id=10]
-[ext_resource path="res://art/character/man/walk/body/man_walk_left_6.png" type="Texture" id=11]
-[ext_resource path="res://art/character/man/walk/body/man_walk_right_7.png" type="Texture" id=12]
-[ext_resource path="res://art/character/man/walk/body/man_walk_down_0.png" type="Texture" id=13]
-[ext_resource path="res://art/character/man/walk/body/man_walk_down_1.png" type="Texture" id=14]
-[ext_resource path="res://art/character/man/walk/body/man_walk_down_2.png" type="Texture" id=15]
-[ext_resource path="res://art/character/man/walk/body/man_walk_down_3.png" type="Texture" id=16]
-[ext_resource path="res://art/character/man/walk/body/man_walk_down_4.png" type="Texture" id=17]
-[ext_resource path="res://art/character/man/walk/body/man_walk_down_5.png" type="Texture" id=18]
-[ext_resource path="res://art/character/man/walk/body/man_walk_down_6.png" type="Texture" id=19]
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://art/character/man/walk/body/man_walk_up_7.png" type="Texture" id=2]
+[ext_resource path="res://art/character/man/walk/body/man_walk_left_0.png" type="Texture" id=3]
+[ext_resource path="res://art/character/man/walk/body/man_walk_left_1.png" type="Texture" id=4]
+[ext_resource path="res://art/character/man/walk/body/man_walk_left_2.png" type="Texture" id=5]
+[ext_resource path="res://art/character/man/walk/body/man_walk_left_3.png" type="Texture" id=6]
+[ext_resource path="res://art/character/man/walk/body/man_walk_left_4.png" type="Texture" id=7]
+[ext_resource path="res://art/character/man/walk/body/man_walk_left_5.png" type="Texture" id=8]
+[ext_resource path="res://art/character/man/walk/body/man_walk_left_6.png" type="Texture" id=9]
+[ext_resource path="res://art/character/man/walk/body/man_walk_left_7.png" type="Texture" id=10]
+[ext_resource path="res://art/character/man/walk/body/man_walk_down_0.png" type="Texture" id=11]
+[ext_resource path="res://art/character/man/walk/body/man_walk_down_1.png" type="Texture" id=12]
+[ext_resource path="res://art/character/man/walk/body/man_walk_down_2.png" type="Texture" id=13]
+[ext_resource path="res://art/character/man/walk/body/man_walk_down_3.png" type="Texture" id=14]
+[ext_resource path="res://art/character/man/walk/body/man_walk_down_4.png" type="Texture" id=15]
+[ext_resource path="res://art/character/man/walk/body/man_walk_down_5.png" type="Texture" id=16]
+[ext_resource path="res://art/character/man/walk/body/man_walk_down_6.png" type="Texture" id=17]
+[ext_resource path="res://art/character/man/walk/body/man_walk_down_7.png" type="Texture" id=18]
+[ext_resource path="res://art/character/man/walk/body/man_walk_right_7.png" type="Texture" id=19]
 [ext_resource path="res://art/character/man/walk/body/man_walk_up_0.png" type="Texture" id=20]
 [ext_resource path="res://art/character/man/walk/body/man_walk_up_1.png" type="Texture" id=21]
 [ext_resource path="res://art/character/man/walk/body/man_walk_up_2.png" type="Texture" id=22]
@@ -33,7 +33,7 @@
 [ext_resource path="res://art/character/man/walk/body/man_walk_right_4.png" type="Texture" id=31]
 [ext_resource path="res://art/character/man/walk/body/man_walk_right_5.png" type="Texture" id=32]
 [ext_resource path="res://art/character/man/walk/body/man_walk_right_6.png" type="Texture" id=33]
-
+[ext_resource path="res://unused/Player_Anim.gd" type="Script" id=34]
 
 
 [sub_resource type="SpriteFrames" id=1]
@@ -42,40 +42,40 @@ resource/name = "man_walk.res"
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": false,
-"name": "idle_left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": false,
-"name": "idle_down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": false,
 "name": "idle_up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "walk_left",
 "speed": 9.0
 }, {
-"frames": [ ExtResource( 12 ) ],
-"loop": false,
-"name": "idle_right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "walk_down",
 "speed": 9.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 19 ) ],
+"loop": false,
+"name": "idle_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": false,
+"name": "idle_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": false,
+"name": "idle_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "walk_up",
 "speed": 9.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "walk_right",
 "speed": 9.0
@@ -84,17 +84,19 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 22.0227
+radius = 25.02
 
 [node name="Player" type="Node2D"]
 
 script/script = ExtResource( 1 )
+walk_speed = 50
+rail_speed = 50
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="."]
 
 anchor_mode = 1
 rotating = false
-current = false
+current = true
 zoom = Vector2( 1, 1 )
 limit/left = -10000000
 limit/top = -10000000
@@ -115,13 +117,14 @@ transform/pos = Vector2( 0, -9 )
 frames = SubResource( 1 )
 animation = "idle_down"
 playing = true
+script/script = ExtResource( 34 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -7 )
-shapes/0/trigger = true
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -8 )
+shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -129,9 +132,11 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
-transform/pos = Vector2( 0, -7 )
+transform/pos = Vector2( 0, -8 )
 shape = SubResource( 2 )
-trigger = true
+trigger = false
 _update_shape_index = 0
+
+[connection signal="input" from="." to="AnimatedSprite" method="_on_Player_input"]
 
 
